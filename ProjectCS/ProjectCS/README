@@ -1,0 +1,32 @@
+﻿Projekt przedstawia prosty system wypożyczalni sprzętu napisany w C#. Aplikacja działa w trybie konsolowym i umożliwia
+dodawanie użytkowników, sprzętu, wypożyczanie, zwroty oraz naliczanie kar za opóźnienia.
+Kod został podzielony na kilka części, aby był czytelny i łatwy w utrzymaniu. W folderze Models znajdują się 
+klasy reprezentujące dane, takie jak użytkownicy (User, Student, Employee), sprzęt (Equipment, Laptop, Camera, Projector) 
+oraz wypożyczenia (Rental). Klasy odpowiadają wyłącznie za przechowywanie danych.
+
+Logika biznesowa została umieszczona w klasie RentalService. To tam realizowane są operacje takie jak wypożyczenie sprzętu,
+sprawdzenie limitów użytkownika oraz naliczanie kar za opóźnienia. Dzięki temu Program.cs zawiera jedynie 
+scenariusz demonstracyjny i nie jest przeciążony logiką.
+Zastosowałem dziedziczenie w miejscach, gdzie wynika to naturalnie z modelu domeny. 
+Klasa Equipment jest bazą dla różnych typów sprzętu, które mają wspólne cechy, ale różnią się szczegółami. 
+Podobnie User jest klasą bazową dla Student i Employee, co pozwala łatwo definiować różne limity wypożyczeń.
+
+W projekcie widać zastosowanie kohezji, ponieważ każda klasa ma jedną, jasno określoną odpowiedzialność.
+Na przykład RentalService zajmuje się wyłącznie logiką biznesową, Rental przechowuje dane dotyczące wypożyczenia, 
+a Equipment odpowiada tylko za informacje o sprzęcie. Dzięki temu klasy nie są przypadkowym zbiorem metod.
+Starałem się również ograniczyć coupling między klasami. Modele nie zależą od serwisów, 
+a komunikacja odbywa się przez RentalService. Dzięki temu zmiana logiki biznesowej nie wymaga modyfikacji 
+klas danych, co ułatwia rozwój projektu.
+
+Jeśli chodzi o odpowiedzialność klas, została ona rozdzielona w następujący sposób:
+User - przechowuje dane użytkownika oraz określa limit wypożyczeń
+Equipment - reprezentuje sprzęt i jego status
+Rental - opisuje pojedyncze wypożyczenie wraz z datami i karą
+RentalService - realizuje wszystkie operacje biznesowe
+
+Podział projektu na modele, serwisy i kod uruchomieniowy uznałem za sensowny, ponieważ oddziela dane od logiki oraz od 
+warstwy prezentacji, co poprawia czytelność i organizację kodu.
+
+Aby uruchomić projekt, należy użyć poleceń:
+dotnet build
+dotnet run
