@@ -40,11 +40,11 @@
         <Reference Include="System.Xml"/>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Enums\EquipmentStatus.cs" />
         <Compile Include="Program.cs"/>
         <Compile Include="Properties\AssemblyInfo.cs"/>
     </ItemGroup>
     <ItemGroup>
-      <Folder Include="Enums\" />
       <Folder Include="Models\" />
       <Folder Include="Services\" />
     </ItemGroup>
