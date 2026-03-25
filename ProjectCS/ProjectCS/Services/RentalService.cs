@@ -33,5 +33,11 @@ namespace ProjectCS.Services
             }
             rental.Equipment.Status = EquipmentStatus.Available;
         }
+        public List<Rental> GetActiveRentals(User user)
+        {
+            return rentals
+                .Where(r => r.User == user && r.ReturnDate == null)
+                .ToList();
+        }
     }
 }
