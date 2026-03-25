@@ -4,7 +4,7 @@ Kod został podzielony na kilka części, aby był czytelny i łatwy w utrzymani
 klasy reprezentujące dane, takie jak użytkownicy (User, Student, Employee), sprzęt (Equipment, Laptop, Camera, Projector) 
 oraz wypożyczenia (Rental). Klasy odpowiadają wyłącznie za przechowywanie danych.
 
-Logika biznesowa została umieszczona w klasie RentalService. To tam realizowane są operacje takie jak wypożyczenie sprzętu,
+Logika biznesowa została umieszczona w klasie RentalService. Tam realizowane są operacje takie jak wypożyczenie sprzętu,
 sprawdzenie limitów użytkownika oraz naliczanie kar za opóźnienia. Dzięki temu Program.cs zawiera jedynie 
 scenariusz demonstracyjny i nie jest przeciążony logiką.
 Zastosowałem dziedziczenie w miejscach, gdzie wynika to naturalnie z modelu domeny. 
