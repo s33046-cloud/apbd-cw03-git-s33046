@@ -41,11 +41,14 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Enums\EquipmentStatus.cs" />
+        <Compile Include="Models\Camera.cs" />
+        <Compile Include="Models\Equipment.cs" />
+        <Compile Include="Models\Laptop.cs" />
+        <Compile Include="Models\Projector.cs" />
         <Compile Include="Program.cs"/>
         <Compile Include="Properties\AssemblyInfo.cs"/>
     </ItemGroup>
     <ItemGroup>
-      <Folder Include="Models\" />
       <Folder Include="Services\" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
